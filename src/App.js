@@ -6,9 +6,19 @@ class App extends Component {
   state = {
     questions: [],
     question: {},
-    toggle: false
+    toggle: false,
+    score: 0
   }
 
+  decrement = () => {
+    if (this.state.score > this.state.question.value) {
+      this.setState({ score: this.state.score - this.state.question.value })
+
+    } else {
+      alert('you lost')
+    }
+
+  }
 
   handleClick = () => {
     fetch('http://jservice.io/api/random')
@@ -37,6 +47,11 @@ class App extends Component {
         {
           this.state.toggle ? <h4>answer:{this.state.question.answer}</h4> : null
         }
+        <div>
+          <h2>score: {this.state.score}</h2>
+          <button onClick={() => this.setState({ score: this.state.score + this.state.question.value })}>increment</button>
+          <button onClick={this.decrement}>decrement</button>
+        </div>
       </>
     );
   }
