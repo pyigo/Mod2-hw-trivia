@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import './index.css';
+import './components/score'
 
 class App extends Component {
   state = {
     questions: [],
-    question: {}
-
+    question: {},
+    toggle: false
   }
-  // componentDidMount() {
-  //   fetch('http://jservice.io/api/random')
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ questions: data }))
-  //     .then(() => console.log(this.state.questions))
-  //     .catch(error => console.error(error))
-  // }
+
 
   handleClick = () => {
     fetch('http://jservice.io/api/random')
       .then(response => response.json())
       .then(data => {
-        console.log(data)
-        this.setState({ question: data })
+        console.log(data[0])
+        this.setState({ question: data[0] })
       })
       //.then(() => console.log(this.state.question))
       .catch(error => console.error(error))
@@ -31,10 +26,17 @@ class App extends Component {
         <h1 id='greeting'>Let's play</h1>
         <button type="submit" onClick={this.handleClick}>Get Question</button>
         <div id='container'>
-          <h1>Question: {this.state.question.name}</h1>
-          <h2>Category: {this.state.question.category}</h2>
-          <h3>Points: {this.state.question.points}</h3>
+
+          <h1>Question: {this.state.question.question}</h1>
+          <h2>Category: {this.state.question.category?.title}</h2>
+          <h3>Points: {this.state.question.value}</h3>
         </div>
+
+        <button onClick={() => this.setState({ toggle: !this.state.toggle })}>TOGGLE</button>
+
+        {
+          this.state.toggle ? <h4>answer:{this.state.question.answer}</h4> : null
+        }
       </>
     );
   }
