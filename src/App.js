@@ -46,12 +46,12 @@ class App extends Component {
           <button id='toggle' onClick={() => this.setState({ toggle: !this.state.toggle })}>Reveal Answer</button>
 
           {
-            this.state.toggle ? <h1>answer:{this.state.question.answer}</h1> : null
+            this.state.toggle ? <h1>Answer:{this.state.question.answer}</h1> : null
           }
           <div>
             <h2>score: {this.state.score}</h2>
-            <button id='increment' onClick={() => this.setState({ score: this.state.score + this.state.question.value })}>increment</button>
-            <button id='decrement' onClick={this.decrement}>decrement</button>
+            <button id='increment' onClick={() => this.setState({ score: this.state.score + this.state.question.value })}>Increment</button>
+            <button id='decrement' onClick={this.decrement}>Decrement</button>
           </div>
         </div>
       </>
