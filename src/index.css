@@ -1,19 +1,60 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Montserrat:wght@500&family=Nova+Square&family=Playfair+Display&family=Squada+One&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 * {
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* background-color: red; */
+  /* background-color: #05445e; */
+  /* background-color: #35858b; */
+  /* background-color: #086e7d; */
+  background-color: #316b83;
+
+  font-family: "Squada One", cursive;
+}
+#whole-container {
+  /* display: flexbox; */
+  height: auto;
+  /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px; */
+  /* padding: 500px; */
+}
+
+/* #toggle {
+} */
+
+#greeting {
+  font-size: 60px;
+  text-align: center;
+  color: peachpuff;
+}
+
+/* button { */
+/* width: 50%; */
+/* height: 4vh;
+  border-radius: 10px;
+  font-size: x-large; */
+/* } */
+button {
+  font-size: 15px;
+  font-family: Arial;
+  width: 140px;
+  height: 50px;
+  border-width: 1px;
+  color: #fff;
+  border-color: #4b8f29;
+  font-weight: bold;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0px 10px 14px -7px #3e7327;
+  text-shadow: 0px 1px 0px #5b8a3c;
+  background: linear-gradient(#77b55a, #72b352);
+}
+
+button:hover {
+  background: linear-gradient(#72b352, #77b55a);
 }

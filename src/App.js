@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
-import './components/score'
+import './components/score';
 
 class App extends Component {
   state = {
@@ -33,24 +33,26 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1 id='greeting'>Let's play</h1>
-        <button type="submit" onClick={this.handleClick}>Get Question</button>
-        <div id='container'>
+        <div id='whole-container'>
+          <h1 id='greeting'>Let's play</h1>
+          <button id='submit' type="submit" onClick={this.handleClick}>Get Question</button>
+          <div id='container'>
 
-          <h1>Question: {this.state.question.question}</h1>
-          <h2>Category: {this.state.question.category?.title}</h2>
-          <h3>Points: {this.state.question.value}</h3>
-        </div>
+            <h1>Question: {this.state.question.question}</h1>
+            <h2>Category: {this.state.question.category?.title}</h2>
+            <h3>Points: {this.state.question.value}</h3>
+          </div>
 
-        <button onClick={() => this.setState({ toggle: !this.state.toggle })}>TOGGLE</button>
+          <button id='toggle' onClick={() => this.setState({ toggle: !this.state.toggle })}>Reveal Answer</button>
 
-        {
-          this.state.toggle ? <h4>answer:{this.state.question.answer}</h4> : null
-        }
-        <div>
-          <h2>score: {this.state.score}</h2>
-          <button onClick={() => this.setState({ score: this.state.score + this.state.question.value })}>increment</button>
-          <button onClick={this.decrement}>decrement</button>
+          {
+            this.state.toggle ? <h1>answer:{this.state.question.answer}</h1> : null
+          }
+          <div>
+            <h2>score: {this.state.score}</h2>
+            <button id='increment' onClick={() => this.setState({ score: this.state.score + this.state.question.value })}>increment</button>
+            <button id='decrement' onClick={this.decrement}>decrement</button>
+          </div>
         </div>
       </>
     );
